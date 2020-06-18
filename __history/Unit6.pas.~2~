@@ -1,0 +1,62 @@
+unit Unit6;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm6 = class(TForm)
+    Memo1: TMemo;
+    Memo2: TMemo;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Panel2: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Timer1: TTimer;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button2Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+    procedure Memo2KeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form6: TForm6;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm6.Button2Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TForm6.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+edit1.Text:='';
+memo1.Clear;
+memo2.Clear;
+Caption:='Беседа с ';
+end;
+
+procedure TForm6.Memo2KeyPress(Sender: TObject; var Key: Char);
+begin
+if key=#13 then
+button1.Click;
+end;
+
+procedure TForm6.Timer1Timer(Sender: TObject);
+begin
+label1.Caption:=TimeToStr(Time);
+end;
+
+end.

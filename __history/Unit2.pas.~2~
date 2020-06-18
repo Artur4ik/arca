@@ -1,0 +1,103 @@
+unit Unit2;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ImgList, Vcl.ComCtrls,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.pngimage, Vcl.Buttons;
+
+type
+  TForm2 = class(TForm)
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    ListView1: TListView;
+    ImageList1: TImageList;
+    Panel1: TPanel;
+    Image1: TImage;
+    Label1: TLabel;
+    BitBtn1: TBitBtn;
+    PopupMenu1: TPopupMenu;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N5: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    procedure Image1MouseEnter(Sender: TObject);
+    procedure Image1MouseLeave(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+    procedure N5Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit1;
+
+procedure TForm2.BitBtn1Click(Sender: TObject);
+begin
+popupmenu1.Popup(mouse.CursorPos.X,mouse.CursorPos.Y);
+end;
+
+procedure TForm2.Image1MouseEnter(Sender: TObject);
+begin
+label1.Font.Color:=ClBlue;
+end;
+
+procedure TForm2.Image1MouseLeave(Sender: TObject);
+begin
+label1.Font.Color:=ClBlack;
+end;
+
+procedure TForm2.N3Click(Sender: TObject);
+begin
+n3.Default:=true;
+bitbtn1.Caption:=n3.Caption;
+end;
+
+procedure TForm2.N4Click(Sender: TObject);
+begin
+n4.Default:=true;
+bitbtn1.Caption:=n4.Caption;
+end;
+
+procedure TForm2.N5Click(Sender: TObject);
+begin
+n5.Default:=true;
+bitbtn1.Caption:=n5.Caption;
+end;
+
+procedure TForm2.N6Click(Sender: TObject);
+begin
+n6.Default:=true;
+bitbtn1.Caption:=n6.Caption;
+end;
+
+procedure TForm2.N7Click(Sender: TObject);
+begin
+n7.Default:=true;
+bitbtn1.Caption:=n7.Caption;
+end;
+
+procedure TForm2.N8Click(Sender: TObject);
+begin
+n8.Default:=true;
+bitbtn1.Caption:=n8.Caption;
+end;
+
+end.
